@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小车远程控制</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .video-section {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .video-container {
+            position: relative;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .video-stream {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .control-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .control-panel {
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .control-title {
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .control-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .control-btn {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        
+        .control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .control-btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn-forward {
+            background-color: #3498db;
+            color: white;
+            grid-column: 2;
+        }
+        
+        .btn-left {
+            background-color: #e74c3c;
+            color: white;
+            grid-column: 1;
+            grid-row: 2;
+        }
+        
+        .btn-stop {
+            background-color: #95a5a6;
+            color: white;
+            grid-column: 2;
+            grid-row: 2;
+        }
+        
+        .btn-right {
+            background-color: #e74c3c;
+            color: white;
+            grid-column: 3;
+            grid-row: 2;
+        }
+        
+        .btn-backward {
+            background-color: #f39c12;
+            color: white;
+            grid-column: 2;
+            grid-row: 3;
+        }
+        
+        .photo-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+        
+        .photo-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+            background-color: #27ae60;
+            color: white;
+            min-width: 80px;
+        }
+        
+        .photo-btn:hover {
+            background-color: #2ecc71;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .photo-btn:active {
+            transform: translateY(0);
+        }
+        
+        .capture-flash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.1s ease;
+        }
+        
+        .capture-flash.active {
+            opacity: 0.8;
+        }
+        
+        .status-panel {
+            background-color: #34495e;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .status-value {
+            font-weight: bold;
+        }
+        
+        .status-online {
+            color: #2ecc71;
+        }
+        
+        .status-offline {
+            color: #e74c3c;
+        }
+        
+        .instructions {
+            background-color: #d5dbdb;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        .instructions ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .reconnect-panel {
+            background-color: #27ae60;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .reconnect-btn {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .reconnect-btn:hover {
+            background-color: #27ae60;
+        }
+        
+        .reconnect-btn:active {
+            background-color: #229954;
+        }
+        
+        .reconnect-info {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .system-info {
+            background-color: #8e44ad;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        
+        .system-info h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .system-info .info-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .control-buttons {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+            }
+            
+            .control-btn {
+                padding: 12px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚗 小车远程控制系统</h1>
+            <p>实时视频流 + 无线控制</p>
+        </div>
+        
+        <div class="content">
+            <div class="video-section">
+                <div class="video-container">
+                    <img src="{{ url_for('video_feed') }}" class="video-stream" alt="摄像头视频流">
+                    <div class="video-overlay">
+                        <span id="video-status">📹 视频流已连接</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="control-section">
+                <div class="control-panel">
+                    <div class="control-title">🎮 控制面板</div>
+                    
+                    <div class="control-buttons">
+                        <button class="control-btn btn-forward" 
+                                onmousedown="sendCommand('forward')" 
+                                onmouseup="sendCommand('stop')"
+                                ontouchstart="sendCommand('forward')" 
+                                ontouchend="sendCommand('stop')">
+                            ⬆️<br>前进
+                        </button>
+                        
+                        <button class="control-btn btn-left" 
+                                onmousedown="sendCommand('left')" 
+                                onmouseup="sendCommand('stop')"
+                                ontouchstart="sendCommand('left')" 
+                                ontouchend="sendCommand('stop')">
+                            ⬅️<br>左转
+                        </button>
+                        
+                        <button class="control-btn btn-stop" 
+                                onclick="sendCommand('stop')">
+                            ⏹️<br>停止
+                        </button>
+                        
+                        <button class="control-btn btn-right" 
+                                onmousedown="sendCommand('right')" 
+                                onmouseup="sendCommand('stop')"
+                                ontouchstart="sendCommand('right')" 
+                                ontouchend="sendCommand('stop')">
+                            ➡️<br>右转
+                        </button>
+                        
+                        <button class="control-btn btn-backward" 
+                                onmousedown="sendCommand('backward')" 
+                                onmouseup="sendCommand('stop')"
+                                ontouchstart="sendCommand('backward')" 
+                                ontouchend="sendCommand('stop')">
+                            ⬇️<br>后退
+                        </button>
+                    </div>
+                    
+                    <div class="photo-controls">
+                        <button class="photo-btn" onclick="capturePhoto()">
+                            📸<br>拍照
+                        </button>
+                        <button class="photo-btn" onclick="openPhotos()">
+                            🖼️<br>相册
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="status-panel">
+                    <div class="status-item">
+                        <span>当前命令:</span>
+                        <span class="status-value" id="current-cmd">S</span>
+                    </div>
+                    <div class="status-item">
+                        <span>串口连接:</span>
+                        <span class="status-value" id="serial-status">检查中...</span>
+                    </div>
+                    <div class="status-item">
+                        <span>摄像头:</span>
+                        <span class="status-value" id="camera-status">检查中...</span>
+                    </div>
+                    <div class="status-item">
+                        <span>网络连接:</span>
+                        <span class="status-value" id="network-status">检查中...</span>
+                    </div>
+                    <div class="status-item">
+                        <span>系统运行:</span>
+                        <span class="status-value" id="uptime">0秒</span>
+                    </div>
+                </div>
+                
+                <div class="reconnect-panel">
+                    <button class="reconnect-btn" onclick="reconnectSerial()">
+                        🔄 重连串口
+                    </button>
+                    <div class="reconnect-info">
+                        <span>重试次数: </span>
+                        <span class="status-value" id="retry-count">0</span>
+                    </div>
+                </div>
+                
+                <div class="instructions">
+                    <h3>📋 操作说明</h3>
+                    <ul>
+                        <li>点击或按住方向按钮控制小车</li>
+                        <li>释放按钮时小车自动停止</li>
+                        <li>停止按钮可立即停止小车</li>
+                        <li>支持触摸屏操作</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 防止触摸时的默认行为
+        document.addEventListener('touchstart', function(e) {
+            if (e.target.classList.contains('control-btn')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+        
+        document.addEventListener('touchend', function(e) {
+            if (e.target.classList.contains('control-btn')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+        
+        // 发送控制命令 - 优化版本
+        let commandQueue = [];
+        let isProcessing = false;
+        
+        function sendCommand(command) {
+            // 如果是相同的命令，不重复发送
+            if (commandQueue.length > 0 && commandQueue[commandQueue.length - 1] === command) {
+                return;
+            }
+            
+            commandQueue.push(command);
+            processCommandQueue();
+        }
+        
+        function processCommandQueue() {
+            if (isProcessing || commandQueue.length === 0) {
+                return;
+            }
+            
+            isProcessing = true;
+            const command = commandQueue.shift();
+            
+            // 添加超时控制
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 200); // 200ms超时
+            
+            fetch('/control', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ command: command }),
+                signal: controller.signal
+            })
+            .then(response => {
+                clearTimeout(timeoutId);
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('current-cmd').textContent = data.command;
+                    console.log('命令已发送:', data.command);
+                } else {
+                    console.error('命令发送失败');
+                }
+            })
+            .catch(error => {
+                clearTimeout(timeoutId);
+                if (error.name === 'AbortError') {
+                    console.warn('请求超时:', command);
+                } else {
+                    console.error('请求错误:', error);
+                }
+            })
+            .finally(() => {
+                isProcessing = false;
+                // 继续处理队列中的命令
+                if (commandQueue.length > 0) {
+                    setTimeout(processCommandQueue, 10);
+                }
+            });
+        }
+        
+        // 更新状态显示
+        function updateStatus() {
+            fetch('/status')
+                .then(response => response.json())
+                .then(data => {
+                    // 更新当前命令
+                    document.getElementById('current-cmd').textContent = data.current_cmd;
+                    
+                    // 更新串口状态
+                    const serialStatus = document.getElementById('serial-status');
+                    if (data.system_status && data.system_status.serial_connected) {
+                        serialStatus.textContent = '已连接';
+                        serialStatus.className = 'status-value status-online';
+                    } else {
+                        serialStatus.textContent = '未连接';
+                        serialStatus.className = 'status-value status-offline';
+                    }
+                    
+                    // 更新摄像头状态
+                    const cameraStatus = document.getElementById('camera-status');
+                    if (data.system_status && data.system_status.camera_active) {
+                        cameraStatus.textContent = '运行中';
+                        cameraStatus.className = 'status-value status-online';
+                    } else {
+                        cameraStatus.textContent = '未激活';
+                        cameraStatus.className = 'status-value status-offline';
+                    }
+                    
+                    // 更新网络状态
+                    const networkStatus = document.getElementById('network-status');
+                    if (data.system_status && data.system_status.network_connected) {
+                        networkStatus.textContent = '已连接';
+                        networkStatus.className = 'status-value status-online';
+                    } else {
+                        networkStatus.textContent = '未连接';
+                        networkStatus.className = 'status-value status-offline';
+                    }
+                    
+                    // 更新运行时间
+                    const uptimeElement = document.getElementById('uptime');
+                    if (data.system_status && data.system_status.uptime) {
+                        const seconds = Math.floor(data.system_status.uptime);
+                        const minutes = Math.floor(seconds / 60);
+                        const hours = Math.floor(minutes / 60);
+                        
+                        let uptimeText = '';
+                        if (hours > 0) {
+                            uptimeText = `${hours}小时${minutes % 60}分钟`;
+                        } else if (minutes > 0) {
+                            uptimeText = `${minutes}分钟${seconds % 60}秒`;
+                        } else {
+                            uptimeText = `${seconds}秒`;
+                        }
+                        uptimeElement.textContent = uptimeText;
+                    }
+                    
+                    // 更新重试次数
+                    const retryCountElement = document.getElementById('retry-count');
+                    if (data.serial_status && data.serial_status.retry_count !== undefined) {
+                        retryCountElement.textContent = data.serial_status.retry_count;
+                    }
+                })
+                .catch(error => {
+                    console.error('状态更新失败:', error);
+                    // 当无法获取状态时，标记为离线
+                    document.getElementById('serial-status').textContent = '连接失败';
+                    document.getElementById('serial-status').className = 'status-value status-offline';
+                });
+        }
+        
+        // 重连串口功能
+        function reconnectSerial() {
+            const btn = document.querySelector('.reconnect-btn');
+            const originalText = btn.textContent;
+            
+            btn.textContent = '🔄 重连中...';
+            btn.disabled = true;
+            
+            fetch('/reconnect', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    btn.textContent = '✅ 重连成功';
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.disabled = false;
+                    }, 2000);
+                } else {
+                    btn.textContent = '❌ 重连失败';
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.disabled = false;
+                    }, 2000);
+                }
+                // 立即更新状态
+                updateStatus();
+            })
+            .catch(error => {
+                console.error('重连失败:', error);
+                btn.textContent = '❌ 重连失败';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                }, 2000);
+            });
+        }
+        
+        // 键盘控制支持 - 优化版本
+        let pressedKeys = new Set();  // 跟踪当前按下的键
+        let lastCommand = null;       // 跟踪最后发送的命令
+        
+        document.addEventListener('keydown', function(e) {
+            // 空格键拍照（优先级最高）
+            if (e.code === 'Space' && !e.target.matches('input, textarea')) {
+                e.preventDefault();
+                capturePhoto();
+                return;
+            }
+            
+            // 防止重复触发
+            if (pressedKeys.has(e.key.toLowerCase())) {
+                return;
+            }
+            
+            let command = null;
+            switch(e.key.toLowerCase()) {
+                case 'w':
+                case 'arrowup':
+                    command = 'forward';
+                    break;
+                case 's':
+                case 'arrowdown':
+                    command = 'backward';
+                    break;
+                case 'a':
+                case 'arrowleft':
+                    command = 'left';
+                    break;
+                case 'd':
+                case 'arrowright':
+                    command = 'right';
+                    break;
+                case ' ':
+                    command = 'stop';
+                    e.preventDefault();
+                    break;
+            }
+            
+            if (command) {
+                pressedKeys.add(e.key.toLowerCase());
+                // 只有当命令不同时才发送
+                if (lastCommand !== command) {
+                    sendCommand(command);
+                    lastCommand = command;
+                }
+            }
+        });
+        
+        document.addEventListener('keyup', function(e) {
+            const key = e.key.toLowerCase();
+            pressedKeys.delete(key);
+            
+            // 只有当没有其他移动键按下时才发送停止命令
+            switch(key) {
+                case 'w':
+                case 'arrowup':
+                case 's':
+                case 'arrowdown':
+                case 'a':
+                case 'arrowleft':
+                case 'd':
+                case 'arrowright':
+                    // 检查是否还有其他移动键按下
+                    if (!pressedKeys.has('w') && !pressedKeys.has('arrowup') &&
+                        !pressedKeys.has('s') && !pressedKeys.has('arrowdown') &&
+                        !pressedKeys.has('a') && !pressedKeys.has('arrowleft') &&
+                        !pressedKeys.has('d') && !pressedKeys.has('arrowright')) {
+                        sendCommand('stop');
+                        lastCommand = 'stop';
+                    }
+                    break;
+            }
+        });
+        
+        // 拍照功能
+        function capturePhoto() {
+            // 添加闪光效果
+            const flash = document.createElement('div');
+            flash.className = 'capture-flash active';
+            document.body.appendChild(flash);
+            
+            // 移除闪光效果
+            setTimeout(() => {
+                flash.remove();
+            }, 200);
+            
+            // 发送拍照请求
+            fetch('/capture_photo', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // 显示成功消息
+                    showMessage('拍照成功！文件名: ' + data.filename, 'success');
+                } else {
+                    showMessage('拍照失败: ' + data.message, 'error');
+                }
+            })
+            .catch(error => {
+                console.error('拍照错误:', error);
+                showMessage('拍照失败: 网络错误', 'error');
+            });
+        }
+        
+        // 打开照片管理页面
+        function openPhotos() {
+            window.open('/photos', '_blank');
+        }
+        
+        // 显示消息函数
+        function showMessage(message, type = 'info') {
+            const messageDiv = document.createElement('div');
+            messageDiv.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 15px 20px;
+                border-radius: 5px;
+                color: white;
+                font-weight: bold;
+                z-index: 1000;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            switch(type) {
+                case 'success':
+                    messageDiv.style.backgroundColor = '#27ae60';
+                    break;
+                case 'error':
+                    messageDiv.style.backgroundColor = '#e74c3c';
+                    break;
+                default:
+                    messageDiv.style.backgroundColor = '#3498db';
+            }
+            
+            messageDiv.textContent = message;
+            document.body.appendChild(messageDiv);
+            
+            // 3秒后自动移除
+            setTimeout(() => {
+                messageDiv.remove();
+            }, 3000);
+        }
+        
+        // 键盘快捷键说明
+        function getCommandFromKey(key) {
+            switch(key) {
+                case 'w':
+                case 'arrowup':
+                    return 'forward';
+                case 's':
+                case 'arrowdown':
+                    return 'backward';
+                case 'a':
+                case 'arrowleft':
+                    return 'left';
+                case 'd':
+                case 'arrowright':
+                    return 'right';
+                default:
+                    return null;
+            }
+        }
+        
+        // 定期更新状态
+        setInterval(updateStatus, 1000);
+        
+        // 页面加载时立即更新状态
+        updateStatus();
+        
+        // 监听视频流错误
+        document.querySelector('.video-stream').addEventListener('error', function() {
+            document.getElementById('video-status').textContent = '📹 视频流连接失败';
+        });
+        
+        document.querySelector('.video-stream').addEventListener('load', function() {
+            document.getElementById('video-status').textContent = '📹 视频流已连接';
+        });
+    </script>
+</body>
+</html>
