@@ -85,9 +85,8 @@ class SerialHandler:
         self.logger.info("串口已断开")
     
     def send_command(self, command: str) -> bool:
-        """发送命令"""
+        """发送命令 - 优化版本"""
         if not self.is_connected:
-            self.logger.warning("串口未连接，无法发送命令")
             return False
             
         with self.lock:
@@ -95,11 +94,9 @@ class SerialHandler:
                 if self.serial_conn and self.serial_conn.is_open:
                     data = command.encode()
                     self.serial_conn.write(data)
-                    self.serial_conn.flush()
-                    self.logger.debug(f"已发送命令: {command}")
+                    self.serial_conn.flush()  # 确保立即发送
                     return True
                 else:
-                    self.logger.warning("串口连接无效")
                     self.is_connected = False
                     return False
                     

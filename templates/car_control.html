@@ -85,6 +85,7 @@
         .control-buttons {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
             gap: 10px;
             margin-bottom: 20px;
         }
@@ -363,6 +364,12 @@
                                 ontouchend="sendCommand('stop')">
                             ⬇️<br>后退
                         </button>
+                        
+                        <button class="control-btn btn-emergency" 
+                                onclick="emergencyStop()"
+                                style="background-color: #e74c3c; color: white;">
+                            🚨<br>急停
+                        </button>
                     </div>
                     
                     <div class="photo-controls">
@@ -435,31 +442,36 @@
             }
         }, { passive: false });
         
-        // 发送控制命令 - 优化版本
-        let commandQueue = [];
-        let isProcessing = false;
+        // 发送控制命令 - 高度优化版本
+        let lastCommand = null;
+        let isCommandPending = false;
         
         function sendCommand(command) {
-            // 如果是相同的命令，不重复发送
-            if (commandQueue.length > 0 && commandQueue[commandQueue.length - 1] === command) {
+            // 停止命令总是立即发送
+            if (command === 'stop') {
+                sendCommandImmediate(command);
                 return;
             }
             
-            commandQueue.push(command);
-            processCommandQueue();
+            // 其他命令避免重复发送
+            if (lastCommand === command) {
+                return;
+            }
+            
+            sendCommandImmediate(command);
         }
         
-        function processCommandQueue() {
-            if (isProcessing || commandQueue.length === 0) {
+        function sendCommandImmediate(command) {
+            if (isCommandPending && command !== 'stop') {
                 return;
             }
             
-            isProcessing = true;
-            const command = commandQueue.shift();
+            isCommandPending = true;
+            lastCommand = command;
             
-            // 添加超时控制
+            // 超时控制缩短到100ms
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 200); // 200ms超时
+            const timeoutId = setTimeout(() => controller.abort(), 100);
             
             fetch('/control', {
                 method: 'POST',
@@ -476,7 +488,6 @@
             .then(data => {
                 if (data.success) {
                     document.getElementById('current-cmd').textContent = data.command;
-                    console.log('命令已发送:', data.command);
                 } else {
                     console.error('命令发送失败');
                 }
@@ -490,11 +501,7 @@
                 }
             })
             .finally(() => {
-                isProcessing = false;
-                // 继续处理队列中的命令
-                if (commandQueue.length > 0) {
-                    setTimeout(processCommandQueue, 10);
-                }
+                isCommandPending = false;
             });
         }
         
@@ -610,83 +617,39 @@
             });
         }
         
-        // 键盘控制支持 - 优化版本
-        let pressedKeys = new Set();  // 跟踪当前按下的键
-        let lastCommand = null;       // 跟踪最后发送的命令
-        
-        document.addEventListener('keydown', function(e) {
-            // 空格键拍照（优先级最高）
-            if (e.code === 'Space' && !e.target.matches('input, textarea')) {
-                e.preventDefault();
-                capturePhoto();
-                return;
-            }
-            
-            // 防止重复触发
-            if (pressedKeys.has(e.key.toLowerCase())) {
-                return;
-            }
-            
-            let command = null;
-            switch(e.key.toLowerCase()) {
-                case 'w':
-                case 'arrowup':
-                    command = 'forward';
-                    break;
-                case 's':
-                case 'arrowdown':
-                    command = 'backward';
-                    break;
-                case 'a':
-                case 'arrowleft':
-                    command = 'left';
-                    break;
-                case 'd':
-                case 'arrowright':
-                    command = 'right';
-                    break;
-                case ' ':
-                    command = 'stop';
-                    e.preventDefault();
-                    break;
-            }
-            
-            if (command) {
-                pressedKeys.add(e.key.toLowerCase());
-                // 只有当命令不同时才发送
-                if (lastCommand !== command) {
-                    sendCommand(command);
-                    lastCommand = command;
+        // 紧急停止功能
+        function emergencyStop() {
+            fetch('/emergency_stop', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
                 }
-            }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('current-cmd').textContent = 'S';
+                    showMessage('紧急停止已执行', 'success');
+                } else {
+                    showMessage('紧急停止失败', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('紧急停止错误:', error);
+                showMessage('紧急停止失败', 'error');
+            });
+        }
+
+        // 在页面失去焦点时自动停止
+        window.addEventListener('blur', function() {
+            emergencyStop();
         });
         
-        document.addEventListener('keyup', function(e) {
-            const key = e.key.toLowerCase();
-            pressedKeys.delete(key);
-            
-            // 只有当没有其他移动键按下时才发送停止命令
-            switch(key) {
-                case 'w':
-                case 'arrowup':
-                case 's':
-                case 'arrowdown':
-                case 'a':
-                case 'arrowleft':
-                case 'd':
-                case 'arrowright':
-                    // 检查是否还有其他移动键按下
-                    if (!pressedKeys.has('w') && !pressedKeys.has('arrowup') &&
-                        !pressedKeys.has('s') && !pressedKeys.has('arrowdown') &&
-                        !pressedKeys.has('a') && !pressedKeys.has('arrowleft') &&
-                        !pressedKeys.has('d') && !pressedKeys.has('arrowright')) {
-                        sendCommand('stop');
-                        lastCommand = 'stop';
-                    }
-                    break;
-            }
+        // 在浏览器关闭或刷新时自动停止
+        window.addEventListener('beforeunload', function() {
+            emergencyStop();
         });
-        
+
         // 拍照功能
         function capturePhoto() {
             // 添加闪光效果
@@ -781,8 +744,8 @@
             }
         }
         
-        // 定期更新状态
-        setInterval(updateStatus, 1000);
+        // 定期更新状态 - 降低频率减少负载
+        setInterval(updateStatus, 2000); // 从1秒改为2秒
         
         // 页面加载时立即更新状态
         updateStatus();

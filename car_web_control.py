@@ -20,7 +20,6 @@ import sys
 
 # 导入自定义模块
 from serial_handler import SerialHandler
-from connection_monitor import ConnectionMonitor
 from config_manager import config_manager
 
 # 配置日志
@@ -31,15 +30,12 @@ app = Flask(__name__)
 
 # 全局变量
 serial_handler = None
-connection_monitor = None
 picam2 = None
 current_cmd = 'S'
 camera_active = False
 system_status = {
     'serial_connected': False,
     'camera_active': False,
-    'network_connected': False,
-    'uptime': 0,
     'last_command_time': 0
 }
 
@@ -60,10 +56,6 @@ def init_serial():
             max_retries=max_retries
         )
         
-        # 设置连接状态回调
-        serial_handler.on_connected = on_serial_connected
-        serial_handler.on_disconnected = on_serial_disconnected
-        
         # 尝试连接
         if serial_handler.connect():
             system_status['serial_connected'] = True
@@ -76,25 +68,13 @@ def init_serial():
         logger.error(f"串口初始化异常: {e}")
         return False
 
-def on_serial_connected():
-    """串口连接成功回调"""
-    global system_status
-    system_status['serial_connected'] = True
-    logger.info("串口已连接")
-
-def on_serial_disconnected():
-    """串口断开连接回调"""
-    global system_status
-    system_status['serial_connected'] = False
-    logger.warning("串口连接丢失")
-
 # 初始化摄像头
 def init_camera():
     global picam2, camera_active, system_status
     try:
-        # 从配置文件获取摄像头参数
-        width = config_manager.getint('camera', 'width', 960)
-        height = config_manager.getint('camera', 'height', 720)
+        # 优化的摄像头参数
+        width = 640  # 降低分辨率减少延迟
+        height = 480
         
         picam2 = Picamera2()
         config = picam2.create_preview_configuration(main={"size": (width, height)})
@@ -103,7 +83,7 @@ def init_camera():
         camera_active = True
         system_status['camera_active'] = True
         logger.info(f"摄像头初始化成功: {width}x{height}")
-        time.sleep(2)  # 等待摄像头稳定
+        time.sleep(1)  # 减少等待时间
         return True
     except Exception as e:
         logger.error(f"摄像头初始化失败: {e}")
@@ -111,61 +91,19 @@ def init_camera():
         system_status['camera_active'] = False
         return False
 
-# 初始化连接监控
-def init_monitor():
-    global connection_monitor
-    try:
-        # 从配置文件获取监控参数
-        check_interval = config_manager.getfloat('monitor', 'check_interval', 10.0)
-        
-        connection_monitor = ConnectionMonitor(check_interval=check_interval)
-        
-        # 设置警告阈值
-        temp_threshold = config_manager.getfloat('monitor', 'temp_threshold', 70.0)
-        memory_threshold = config_manager.getfloat('monitor', 'memory_threshold', 80.0)
-        disk_threshold = config_manager.getfloat('monitor', 'disk_threshold', 90.0)
-        
-        connection_monitor.set_thresholds(
-            temp=temp_threshold,
-            memory=memory_threshold,
-            disk=disk_threshold
-        )
-        
-        # 设置回调函数
-        connection_monitor.on_network_change = on_network_change
-        connection_monitor.on_system_alert = on_system_alert
-        
-        # 启动监控
-        connection_monitor.start_monitoring()
-        logger.info("连接监控初始化成功")
-        return True
-    except Exception as e:
-        logger.error(f"连接监控初始化失败: {e}")
-        return False
-
-def on_network_change(network_status):
-    """网络状态改变回调"""
-    global system_status
-    system_status['network_connected'] = network_status['connected']
-    if network_status['connected']:
-        logger.info(f"网络已连接: {network_status['interface']} - {network_status['ip']}")
-    else:
-        logger.warning("网络连接丢失")
-
-def on_system_alert(alerts):
-    """系统警告回调"""
-    for alert in alerts:
-        logger.warning(f"系统警告: {alert}")
-
-# 发送控制命令
+# 发送控制命令 - 优化版本
 def send_command(cmd):
     global serial_handler, current_cmd, system_status
     if serial_handler and serial_handler.is_connected:
         try:
+            # 立即发送停止命令，其他命令检查重复
+            if cmd != 'S' and current_cmd == cmd:
+                return True  # 避免重复发送相同命令
+            
             if serial_handler.send_command(cmd):
                 current_cmd = cmd
                 system_status['last_command_time'] = time.time()
-                logger.info(f"已发送命令: {cmd}")
+                logger.debug(f"已发送命令: {cmd}")  # 改为debug级别减少日志
                 return True
             else:
                 logger.error("发送命令失败")
@@ -177,21 +115,22 @@ def send_command(cmd):
         logger.warning("串口未连接，无法发送命令")
         return False
 
-# 生成摄像头帧
+# 生成摄像头帧 - 优化版本
 def generate_frames():
     global picam2, camera_active
     frame_count = 0
     error_count = 0
     max_errors = 10
     
-    # 从配置文件获取JPEG质量
-    jpeg_quality = config_manager.getint('camera', 'jpeg_quality', 85)
-    fps = config_manager.getint('camera', 'fps', 30)
-    frame_interval = 1.0 / fps  # 帧间隔
+    # 优化的视频参数
+    jpeg_quality = 75  # 降低质量以减少延迟
+    fps = 15  # 降低帧率
+    frame_interval = 1.0 / fps
     
     logger.info(f"开始生成视频帧，质量: {jpeg_quality}, FPS: {fps}")
     
     while camera_active:
+        start_time = time.time()
         try:
             if picam2:
                 # 捕获帧
@@ -200,26 +139,33 @@ def generate_frames():
                 # 检查帧是否有效
                 if frame is None or frame.size == 0:
                     error_count += 1
-                    logger.warning(f"捕获到空帧 (错误计数: {error_count})")
-                    time.sleep(0.1)
+                    if error_count < 5:  # 减少错误日志
+                        logger.warning(f"捕获到空帧 (错误计数: {error_count})")
+                    time.sleep(0.05)
                     continue
+                
+                # 降低分辨率以减少延迟
+                height, width = frame.shape[:2]
+                if width > 640:
+                    scale = 640 / width
+                    new_width = int(width * scale)
+                    new_height = int(height * scale)
+                    frame = cv2.resize(frame, (new_width, new_height))
                 
                 # 确保颜色空间转换正确
                 if len(frame.shape) == 3:
                     if frame.shape[2] == 3:  # RGB
-                        # 如果是RGB，转换为BGR用于OpenCV
                         frame_bgr = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
-                    else:  # 可能是RGBA
+                    else:  # RGBA
                         frame_bgr = cv2.cvtColor(frame, cv2.COLOR_RGBA2BGR)
                 else:
-                    # 灰度图像
                     frame_bgr = cv2.cvtColor(frame, cv2.COLOR_GRAY2BGR)
                 
-                # 编码为JPEG，使用更兼容的参数
+                # 快速编码参数
                 encode_param = [
                     cv2.IMWRITE_JPEG_QUALITY, jpeg_quality,
-                    cv2.IMWRITE_JPEG_PROGRESSIVE, 0,  # 禁用渐进式JPEG
-                    cv2.IMWRITE_JPEG_OPTIMIZE, 1      # 启用优化
+                    cv2.IMWRITE_JPEG_PROGRESSIVE, 0,
+                    cv2.IMWRITE_JPEG_OPTIMIZE, 0  # 禁用优化以提高速度
                 ]
                 
                 ret, buffer = cv2.imencode('.jpg', frame_bgr, encode_param)
@@ -227,42 +173,41 @@ def generate_frames():
                 if ret and buffer is not None:
                     frame_bytes = buffer.tobytes()
                     
-                    # 确保帧数据不为空
                     if len(frame_bytes) > 0:
-                        # 使用标准的多部分响应格式
                         yield (b'--frame\r\n'
                                b'Content-Type: image/jpeg\r\n'
-                               b'Content-Length: ' + str(len(frame_bytes)).encode() + b'\r\n'
                                b'\r\n' + frame_bytes + b'\r\n')
                         
                         frame_count += 1
-                        error_count = 0  # 重置错误计数
+                        error_count = 0
                         
-                        # 每1000帧记录一次统计
-                        if frame_count % 1000 == 0:
+                        # 减少日志频率
+                        if frame_count % 300 == 0:
                             logger.info(f"已生成 {frame_count} 帧")
                     else:
                         error_count += 1
-                        logger.warning(f"编码后帧数据为空 (错误计数: {error_count})")
                 else:
                     error_count += 1
-                    logger.warning(f"帧编码失败 (错误计数: {error_count})")
                 
         except Exception as e:
             error_count += 1
-            logger.error(f"摄像头帧生成错误: {e} (错误计数: {error_count})")
+            if error_count < 5:  # 减少错误日志
+                logger.error(f"摄像头帧生成错误: {e}")
             
-            # 如果错误过多，尝试重新初始化摄像头
             if error_count >= max_errors:
                 logger.warning("摄像头错误过多，尝试重新初始化")
                 if reinit_camera():
                     error_count = 0
-                    frame_count = 0  # 重置帧计数
+                    frame_count = 0
                 else:
                     logger.error("摄像头重新初始化失败")
                     break
         
-        time.sleep(frame_interval)
+        # 动态调整帧间隔
+        elapsed = time.time() - start_time
+        sleep_time = max(0, frame_interval - elapsed)
+        if sleep_time > 0:
+            time.sleep(sleep_time)
 
 def reinit_camera():
     """重新初始化摄像头"""
@@ -287,21 +232,21 @@ def index():
 def video_feed():
     """视频流端点 - 提供MJPEG视频流"""
     try:
-        # 添加必要的响应头，确保兼容性
+        # 优化的响应头
         response = Response(
             generate_frames(),
             mimetype='multipart/x-mixed-replace; boundary=frame',
             headers={
-                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
                 'Pragma': 'no-cache',
                 'Expires': '0',
-                'Connection': 'close'
+                'Connection': 'keep-alive',
+                'Access-Control-Allow-Origin': '*'
             }
         )
         return response
     except Exception as e:
         logger.error(f"视频流端点错误: {e}")
-        # 返回一个错误响应
         return Response(
             "Video stream error",
             status=500,
@@ -375,16 +320,6 @@ def control():
     
     cmd = cmd_map.get(command, 'S')
     
-    # 避免重复发送相同命令（除了停止命令）
-    global current_cmd
-    if cmd != 'S' and current_cmd == cmd:
-        return jsonify({
-            'success': True,
-            'command': cmd,
-            'current_cmd': current_cmd,
-            'message': 'duplicate_command_ignored'
-        })
-    
     success = send_command(cmd)
     
     return jsonify({
@@ -396,15 +331,10 @@ def control():
 @app.route('/status')
 def status():
     """获取系统状态"""
-    global system_status, connection_monitor
+    global system_status
     
     # 更新运行时间
     system_status['uptime'] = time.time() - start_time
-    
-    # 获取连接监控状态
-    monitor_status = {}
-    if connection_monitor:
-        monitor_status = connection_monitor.get_status()
     
     # 获取串口状态
     serial_status = {}
@@ -414,7 +344,6 @@ def status():
     return jsonify({
         'current_cmd': current_cmd,
         'system_status': system_status,
-        'monitor_status': monitor_status,
         'serial_status': serial_status,
         'timestamp': time.time()
     })
@@ -427,9 +356,19 @@ def health():
         'timestamp': time.time(),
         'services': {
             'serial': system_status['serial_connected'],
-            'camera': system_status['camera_active'],
-            'network': system_status['network_connected']
+            'camera': system_status['camera_active']
         }
+    })
+
+@app.route('/emergency_stop', methods=['POST'])
+def emergency_stop():
+    """紧急停止 - 立即停止所有动作"""
+    success = send_command('S')
+    logger.info("紧急停止命令已发送")
+    return jsonify({
+        'success': success,
+        'command': 'S',
+        'message': '紧急停止'
     })
 
 # 添加新的路由用于手动重连
@@ -628,21 +567,18 @@ def init_all():
     # 初始化各个组件
     serial_ok = init_serial()
     camera_ok = init_camera()
-    monitor_ok = init_monitor()
     
     if not serial_ok:
         logger.warning("串口初始化失败，控制功能将不可用")
     if not camera_ok:
         logger.warning("摄像头初始化失败，视频功能将不可用")
-    if not monitor_ok:
-        logger.warning("连接监控初始化失败，监控功能将不可用")
     
     # 至少要有一个组件成功初始化
     return serial_ok or camera_ok
 
 # 清理资源
 def cleanup():
-    global serial_handler, picam2, camera_active, connection_monitor
+    global serial_handler, picam2, camera_active
     
     logger.info("正在清理资源...")
     
@@ -663,11 +599,6 @@ def cleanup():
             logger.info("摄像头已停止")
         except Exception as e:
             logger.error(f"停止摄像头时出错: {e}")
-    
-    # 停止监控
-    if connection_monitor:
-        connection_monitor.stop_monitoring()
-        logger.info("连接监控已停止")
 
 # 信号处理
 def signal_handler(signum, frame):
