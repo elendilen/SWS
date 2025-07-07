@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>键盘控制测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .status {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .key-display {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        .command-display {
+            font-size: 18px;
+            color: #e74c3c;
+            margin: 10px 0;
+        }
+        .log {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            height: 300px;
+            overflow-y: auto;
+            margin: 20px 0;
+        }
+        .instructions {
+            background-color: #d5dbdb;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .btn-danger {
+            background-color: #e74c3c;
+        }
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 键盘控制测试</h1>
+        
+        <div class="status">
+            <h3>状态显示</h3>
+            <div class="key-display">当前按键: <span id="current-key">无</span></div>
+            <div class="command-display">当前命令: <span id="current-command">stop</span></div>
+            <div>按键组合: <span id="pressed-keys">无</span></div>
+        </div>
+        
+        <div class="instructions">
+            <h3>📋 使用说明</h3>
+            <ul>
+                <li><strong>W/↑</strong> - 前进</li>
+                <li><strong>S/↓</strong> - 后退</li>
+                <li><strong>A/←</strong> - 左转</li>
+                <li><strong>D/→</strong> - 右转</li>
+                <li><strong>空格</strong> - 拍照</li>
+                <li><strong>Q/ESC</strong> - 停止</li>
+            </ul>
+        </div>
+        
+        <div>
+            <button class="btn" onclick="testConnection()">测试连接</button>
+            <button class="btn" onclick="sendTestCommand('forward')">测试前进</button>
+            <button class="btn" onclick="sendTestCommand('backward')">测试后退</button>
+            <button class="btn" onclick="sendTestCommand('left')">测试左转</button>
+            <button class="btn" onclick="sendTestCommand('right')">测试右转</button>
+            <button class="btn btn-danger" onclick="sendTestCommand('stop')">测试停止</button>
+            <button class="btn" onclick="clearLog()">清除日志</button>
+        </div>
+        
+        <div class="log" id="log-display"></div>
+    </div>
+
+    <script>
+        let pressedKeys = new Set();
+        let logElement = document.getElementById('log-display');
+        
+        function log(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            logElement.innerHTML += `[${timestamp}] ${message}\n`;
+            logElement.scrollTop = logElement.scrollHeight;
+        }
+        
+        function updateDisplay() {
+            document.getElementById('pressed-keys').textContent = 
+                pressedKeys.size > 0 ? Array.from(pressedKeys).join(', ') : '无';
+        }
+        
+        function sendTestCommand(command) {
+            log(`发送测试命令: ${command}`);
+            
+            fetch('/control', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ command: command })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    log(`✓ 命令发送成功: ${command}`);
+                    document.getElementById('current-command').textContent = command;
+                } else {
+                    log(`✗ 命令发送失败: ${command}`);
+                }
+            })
+            .catch(error => {
+                log(`✗ 请求错误: ${error}`);
+            });
+        }
+        
+        function testConnection() {
+            log('测试服务器连接...');
+            
+            fetch('/health')
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'ok') {
+                    log('✓ 服务器连接正常');
+                } else {
+                    log('⚠ 服务器状态异常');
+                }
+            })
+            .catch(error => {
+                log(`✗ 无法连接到服务器: ${error}`);
+            });
+        }
+        
+        function clearLog() {
+            logElement.innerHTML = '';
+        }
+        
+        // 键盘事件监听
+        document.addEventListener('keydown', function(e) {
+            if (e.target.matches('input, textarea')) {
+                return;
+            }
+            
+            const key = e.key.toLowerCase();
+            document.getElementById('current-key').textContent = e.key;
+            
+            if (pressedKeys.has(key)) {
+                return;
+            }
+            
+            pressedKeys.add(key);
+            updateDisplay();
+            
+            let command = null;
+            switch(key) {
+                case 'w':
+                case 'arrowup':
+                    command = 'forward';
+                    break;
+                case 's':
+                case 'arrowdown':
+                    command = 'backward';
+                    break;
+                case 'a':
+                case 'arrowleft':
+                    command = 'left';
+                    break;
+                case 'd':
+                case 'arrowright':
+                    command = 'right';
+                    break;
+                case ' ':
+                    command = 'photo';
+                    e.preventDefault();
+                    break;
+                case 'q':
+                case 'escape':
+                    command = 'stop';
+                    break;
+            }
+            
+            if (command) {
+                if (command === 'photo') {
+                    log('📸 拍照命令（测试页面中跳过）');
+                } else {
+                    log(`🔽 按键: ${e.key} -> 命令: ${command}`);
+                    sendTestCommand(command);
+                }
+            }
+        });
+        
+        document.addEventListener('keyup', function(e) {
+            if (e.target.matches('input, textarea')) {
+                return;
+            }
+            
+            const key = e.key.toLowerCase();
+            pressedKeys.delete(key);
+            updateDisplay();
+            
+            document.getElementById('current-key').textContent = '无';
+            
+            // 检查是否还有移动键按下
+            const movementKeys = ['w', 's', 'a', 'd', 'arrowup', 'arrowdown', 'arrowleft', 'arrowright'];
+            const hasMovement = movementKeys.some(k => pressedKeys.has(k));
+            
+            if (movementKeys.includes(key) && !hasMovement) {
+                log(`🔼 释放: ${e.key} -> 发送停止命令`);
+                sendTestCommand('stop');
+            }
+        });
+        
+        // 页面加载完成
+        window.addEventListener('load', function() {
+            log('键盘控制测试页面已加载');
+            log('请使用WASD或方向键进行测试');
+            testConnection();
+        });
+        
+        // 页面失去焦点时停止
+        window.addEventListener('blur', function() {
+            log('页面失去焦点，发送停止命令');
+            sendTestCommand('stop');
+            pressedKeys.clear();
+            updateDisplay();
+        });
+    </script>
+</body>
+</html>

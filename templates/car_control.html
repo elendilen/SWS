@@ -420,8 +420,12 @@
                     <ul>
                         <li>点击或按住方向按钮控制小车</li>
                         <li>释放按钮时小车自动停止</li>
-                        <li>停止按钮可立即停止小车</li>
                         <li>支持触摸屏操作</li>
+                        <li><strong>键盘控制：</strong></li>
+                        <li>　W/↑ = 前进，S/↓ = 后退</li>
+                        <li>　A/← = 左转，D/→ = 右转</li>
+                        <li>　空格 = 拍照，Q/ESC = 停止</li>
+                        <li>🚨 红色急停按钮可立即停止</li>
                     </ul>
                 </div>
             </div>
@@ -724,25 +728,96 @@
             }, 3000);
         }
         
-        // 键盘快捷键说明
-        function getCommandFromKey(key) {
+        // 键盘控制支持 - 修复版本
+        let pressedKeys = new Set();
+        
+        document.addEventListener('keydown', function(e) {
+            // 如果在输入框中，不处理键盘事件
+            if (e.target.matches('input, textarea')) {
+                return;
+            }
+            
+            // 空格键拍照（优先级最高）
+            if (e.code === 'Space') {
+                e.preventDefault();
+                capturePhoto();
+                return;
+            }
+            
+            // 防止重复触发
+            if (pressedKeys.has(e.key.toLowerCase())) {
+                return;
+            }
+            
+            let command = null;
+            switch(e.key.toLowerCase()) {
+                case 'w':
+                case 'arrowup':
+                    command = 'forward';
+                    break;
+                case 's':
+                case 'arrowdown':
+                    command = 'backward';
+                    break;
+                case 'a':
+                case 'arrowleft':
+                    command = 'left';
+                    break;
+                case 'd':
+                case 'arrowright':
+                    command = 'right';
+                    break;
+                case 'q':
+                case 'escape':
+                    command = 'stop';
+                    break;
+            }
+            
+            if (command) {
+                e.preventDefault();
+                pressedKeys.add(e.key.toLowerCase());
+                sendCommand(command);
+                console.log('键盘按下:', e.key, '命令:', command);
+            }
+        });
+        
+        document.addEventListener('keyup', function(e) {
+            // 如果在输入框中，不处理键盘事件
+            if (e.target.matches('input, textarea')) {
+                return;
+            }
+            
+            const key = e.key.toLowerCase();
+            pressedKeys.delete(key);
+            
+            // 立即发送停止命令
             switch(key) {
                 case 'w':
                 case 'arrowup':
-                    return 'forward';
                 case 's':
                 case 'arrowdown':
-                    return 'backward';
                 case 'a':
                 case 'arrowleft':
-                    return 'left';
                 case 'd':
                 case 'arrowright':
-                    return 'right';
-                default:
-                    return null;
+                    // 检查是否还有其他移动键按下
+                    const movementKeys = ['w', 'arrowup', 's', 'arrowdown', 'a', 'arrowleft', 'd', 'arrowright'];
+                    const hasMovementKey = movementKeys.some(k => pressedKeys.has(k));
+                    
+                    if (!hasMovementKey) {
+                        sendCommandImmediate('stop');
+                        console.log('键盘松开，发送停止命令');
+                    }
+                    break;
             }
-        }
+        });
+
+        // 页面加载完成后显示键盘控制提示
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                showMessage('键盘控制已激活！WASD或方向键控制小车', 'success');
+            }, 1000);
+        });
         
         // 定期更新状态 - 降低频率减少负载
         setInterval(updateStatus, 2000); // 从1秒改为2秒

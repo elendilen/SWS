@@ -557,6 +557,12 @@ def photos_page():
     """照片管理页面"""
     return render_template('photos.html')
 
+# 添加键盘测试页面路由
+@app.route('/keyboard_test')
+def keyboard_test():
+    """键盘控制测试页面"""
+    return render_template('keyboard_test.html')
+
 # 初始化所有组件
 def init_all():
     global start_time
