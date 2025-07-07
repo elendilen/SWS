@@ -289,6 +289,18 @@
             margin-bottom: 5px;
         }
         
+        .status-warning {
+            color: #f39c12 !important;
+        }
+        
+        .status-danger {
+            color: #e74c3c !important;
+        }
+        
+        .status-normal {
+            color: #2ecc71 !important;
+        }
+        
         @media (max-width: 768px) {
             .content {
                 flex-direction: column;
@@ -396,12 +408,36 @@
                         <span class="status-value" id="camera-status">检查中...</span>
                     </div>
                     <div class="status-item">
-                        <span>网络连接:</span>
-                        <span class="status-value" id="network-status">检查中...</span>
-                    </div>
-                    <div class="status-item">
                         <span>系统运行:</span>
                         <span class="status-value" id="uptime">0秒</span>
+                    </div>
+                </div>
+                
+                <div class="system-info">
+                    <h4>📊 系统监控</h4>
+                    <div class="info-item">
+                        <span>CPU温度:</span>
+                        <span class="status-value" id="cpu-temp">--°C</span>
+                    </div>
+                    <div class="info-item">
+                        <span>CPU使用率:</span>
+                        <span class="status-value" id="cpu-usage">--%</span>
+                    </div>
+                    <div class="info-item">
+                        <span>内存使用率:</span>
+                        <span class="status-value" id="memory-usage">--%</span>
+                    </div>
+                    <div class="info-item">
+                        <span>内存使用:</span>
+                        <span class="status-value" id="memory-details">-- / -- GB</span>
+                    </div>
+                    <div class="info-item">
+                        <span>磁盘使用率:</span>
+                        <span class="status-value" id="disk-usage">--%</span>
+                    </div>
+                    <div class="info-item">
+                        <span>磁盘使用:</span>
+                        <span class="status-value" id="disk-details">-- / -- GB</span>
                     </div>
                 </div>
                 
@@ -537,16 +573,6 @@
                         cameraStatus.className = 'status-value status-offline';
                     }
                     
-                    // 更新网络状态
-                    const networkStatus = document.getElementById('network-status');
-                    if (data.system_status && data.system_status.network_connected) {
-                        networkStatus.textContent = '已连接';
-                        networkStatus.className = 'status-value status-online';
-                    } else {
-                        networkStatus.textContent = '未连接';
-                        networkStatus.className = 'status-value status-offline';
-                    }
-                    
                     // 更新运行时间
                     const uptimeElement = document.getElementById('uptime');
                     if (data.system_status && data.system_status.uptime) {
@@ -563,6 +589,74 @@
                             uptimeText = `${seconds}秒`;
                         }
                         uptimeElement.textContent = uptimeText;
+                    }
+                    
+                    // 更新系统信息
+                    if (data.system_info) {
+                        // CPU温度
+                        const cpuTempElement = document.getElementById('cpu-temp');
+                        const cpuTemp = data.system_info.cpu_temp;
+                        cpuTempElement.textContent = `${cpuTemp.toFixed(1)}°C`;
+                        
+                        // 根据温度设置颜色
+                        if (cpuTemp > 70) {
+                            cpuTempElement.className = 'status-value status-danger';
+                        } else if (cpuTemp > 60) {
+                            cpuTempElement.className = 'status-value status-warning';
+                        } else {
+                            cpuTempElement.className = 'status-value status-normal';
+                        }
+                        
+                        // CPU使用率
+                        const cpuUsageElement = document.getElementById('cpu-usage');
+                        const cpuUsage = data.system_info.cpu_percent;
+                        cpuUsageElement.textContent = `${cpuUsage.toFixed(1)}%`;
+                        
+                        if (cpuUsage > 80) {
+                            cpuUsageElement.className = 'status-value status-danger';
+                        } else if (cpuUsage > 60) {
+                            cpuUsageElement.className = 'status-value status-warning';
+                        } else {
+                            cpuUsageElement.className = 'status-value status-normal';
+                        }
+                        
+                        // 内存使用率
+                        const memoryUsageElement = document.getElementById('memory-usage');
+                        const memoryUsage = data.system_info.memory_percent;
+                        memoryUsageElement.textContent = `${memoryUsage.toFixed(1)}%`;
+                        
+                        if (memoryUsage > 80) {
+                            memoryUsageElement.className = 'status-value status-danger';
+                        } else if (memoryUsage > 70) {
+                            memoryUsageElement.className = 'status-value status-warning';
+                        } else {
+                            memoryUsageElement.className = 'status-value status-normal';
+                        }
+                        
+                        // 内存详细信息
+                        const memoryDetailsElement = document.getElementById('memory-details');
+                        const memoryUsed = data.system_info.memory_used;
+                        const memoryTotal = data.system_info.memory_total;
+                        memoryDetailsElement.textContent = `${memoryUsed.toFixed(1)} / ${memoryTotal.toFixed(1)} GB`;
+                        
+                        // 磁盘使用率
+                        const diskUsageElement = document.getElementById('disk-usage');
+                        const diskUsage = data.system_info.disk_percent;
+                        diskUsageElement.textContent = `${diskUsage.toFixed(1)}%`;
+                        
+                        if (diskUsage > 90) {
+                            diskUsageElement.className = 'status-value status-danger';
+                        } else if (diskUsage > 80) {
+                            diskUsageElement.className = 'status-value status-warning';
+                        } else {
+                            diskUsageElement.className = 'status-value status-normal';
+                        }
+                        
+                        // 磁盘详细信息
+                        const diskDetailsElement = document.getElementById('disk-details');
+                        const diskUsed = data.system_info.disk_used;
+                        const diskTotal = data.system_info.disk_total;
+                        diskDetailsElement.textContent = `${diskUsed.toFixed(1)} / ${diskTotal.toFixed(1)} GB`;
                     }
                     
                     // 更新重试次数

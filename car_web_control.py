@@ -17,6 +17,8 @@ import io
 import base64
 import os
 import sys
+import psutil
+import subprocess
 
 # 导入自定义模块
 from serial_handler import SerialHandler
@@ -341,10 +343,14 @@ def status():
     if serial_handler:
         serial_status = serial_handler.get_status()
     
+    # 获取系统信息
+    system_info = get_system_info()
+    
     return jsonify({
         'current_cmd': current_cmd,
         'system_status': system_status,
         'serial_status': serial_status,
+        'system_info': system_info,
         'timestamp': time.time()
     })
 
@@ -562,6 +568,65 @@ def photos_page():
 def keyboard_test():
     """键盘控制测试页面"""
     return render_template('keyboard_test.html')
+
+# 获取系统信息
+def get_system_info():
+    """获取系统信息"""
+    try:
+        # CPU温度
+        temp = 0.0
+        try:
+            # 尝试读取树莓派温度文件
+            with open('/sys/class/thermal/thermal_zone0/temp', 'r') as f:
+                temp = int(f.read().strip()) / 1000.0
+        except:
+            try:
+                # 尝试使用psutil获取温度
+                temps = psutil.sensors_temperatures()
+                if 'cpu_thermal' in temps:
+                    temp = temps['cpu_thermal'][0].current
+                elif 'coretemp' in temps:
+                    temp = temps['coretemp'][0].current
+            except:
+                pass
+        
+        # CPU使用率
+        cpu_percent = psutil.cpu_percent(interval=0.1)
+        
+        # 内存信息
+        memory = psutil.virtual_memory()
+        memory_percent = memory.percent
+        memory_used = memory.used / (1024**3)  # GB
+        memory_total = memory.total / (1024**3)  # GB
+        
+        # 磁盘信息
+        disk = psutil.disk_usage('/')
+        disk_percent = disk.percent
+        disk_used = disk.used / (1024**3)  # GB
+        disk_total = disk.total / (1024**3)  # GB
+        
+        return {
+            'cpu_temp': temp,
+            'cpu_percent': cpu_percent,
+            'memory_percent': memory_percent,
+            'memory_used': memory_used,
+            'memory_total': memory_total,
+            'disk_percent': disk_percent,
+            'disk_used': disk_used,
+            'disk_total': disk_total
+        }
+    except Exception as e:
+        logger.error(f"获取系统信息失败: {e}")
+        return {
+            'cpu_temp': 0.0,
+            'cpu_percent': 0.0,
+            'memory_percent': 0.0,
+            'memory_used': 0.0,
+            'memory_total': 0.0,
+            'disk_percent': 0.0,
+            'disk_used': 0.0,
+            'disk_total': 0.0
+        }
 
 # 初始化所有组件
 def init_all():
