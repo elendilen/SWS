@@ -4100,3 +4100,1064 @@
 2025-07-08 07:18:55,429 - config_manager - INFO - 摄像头已停止
 2025-07-08 07:18:55,430 - config_manager - INFO - 正在清理资源...
 2025-07-08 07:18:55,932 - config_manager - INFO - 摄像头已停止
+2025-07-08 08:28:13,530 - config_manager - INFO - === 小车远程控制系统 v2.0 ===
+2025-07-08 08:28:13,530 - config_manager - INFO - 正在初始化系统...
+2025-07-08 08:28:13,532 - serial_handler - INFO - 串口连接成功: /dev/ttyS0
+2025-07-08 08:28:13,532 - config_manager - INFO - 串口初始化成功: /dev/ttyS0 @ 9600
+2025-07-08 08:28:13,566 - picamera2.picamera2 - INFO - Initialization successful.
+2025-07-08 08:28:13,567 - picamera2.picamera2 - INFO - Camera now open.
+2025-07-08 08:28:13,575 - picamera2.picamera2 - INFO - Configuration successful!
+2025-07-08 08:28:13,681 - picamera2.picamera2 - INFO - Camera started
+2025-07-08 08:28:13,686 - config_manager - INFO - 摄像头初始化成功: 640x480
+2025-07-08 08:28:14,687 - config_manager - INFO - 系统初始化完成
+2025-07-08 08:28:14,688 - config_manager - INFO - 网页控制界面: http://localhost:5800
+2025-07-08 08:28:14,689 - config_manager - INFO - 按 Ctrl+C 退出
+2025-07-08 08:28:14,707 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5800
+ * Running on http://192.168.5.170:5800
+2025-07-08 08:28:14,708 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-08 08:28:19,143 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:19] "GET / HTTP/1.1" 200 -
+2025-07-08 08:28:19,290 - config_manager - INFO - 开始生成视频帧，质量: 75, FPS: 15
+2025-07-08 08:28:19,366 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:19] "GET /video_feed HTTP/1.1" 200 -
+2025-07-08 08:28:19,912 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:19] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:20,079 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-08 08:28:21,251 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:21] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:28:21,568 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:21] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:21,855 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:21] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:28:23,523 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:23] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:25,935 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:25] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:27,661 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:27] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:29,616 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:29] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:31,771 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:31] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:33,539 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:33] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:35,778 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:35] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:37,537 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:37] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:39,542 - config_manager - INFO - 已生成 300 帧
+2025-07-08 08:28:39,588 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:39] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:41,879 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:41] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:43,335 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:43] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:28:43,847 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:43] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:45,443 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:45] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:28:45,521 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:45] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:46,291 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:46] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:28:46,965 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:46] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:28:47,327 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:47] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:28:47,467 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:47] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:28:47,635 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:47] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:48,231 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:48] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:28:48,863 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:48] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:28:48,963 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:48] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:28:50,137 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:50] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:51,207 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:51] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:28:51,620 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:51] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:52,199 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:52] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:28:52,915 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:52] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:28:53,816 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:53] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:54,051 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:54] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:28:54,367 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:54] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:28:55,503 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:55] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:57,517 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:57] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:59,529 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:28:59] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:28:59,580 - config_manager - INFO - 已生成 600 帧
+2025-07-08 08:29:00,939 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:00] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:00,947 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:00] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:01,745 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:01] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:01,848 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:01] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:03,675 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:03] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:05,565 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:05] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:07,614 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:07] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:09,733 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:09] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:10,315 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:10] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:10,719 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:10] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:11,576 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:11] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:12,114 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:29:12,116 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:12] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:29:13,525 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:13] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:14,103 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:14] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:14,275 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:14] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:14,879 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:14] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:15,327 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:15] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:15,510 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:15] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:15,783 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:15] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:16,855 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:16] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:17,315 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:17] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:17,511 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:17] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:17,779 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:17] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:18,155 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:18] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:18,439 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:18] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:19,055 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:19] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:19,175 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:19] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:19,521 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:19] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:19,609 - config_manager - INFO - 已生成 900 帧
+2025-07-08 08:29:19,647 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:19] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:19,771 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:19] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:20,191 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:20] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:21,506 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:21] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:22,787 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:22] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:23,107 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:23] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:23,515 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:23] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:23,559 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:23] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:23,987 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:23] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:24,559 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:24] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:25,023 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:25] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:25,123 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:25] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:25,463 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:25] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:25,594 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:25] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:26,027 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:26] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:26,147 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:26] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:26,603 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:26] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:26,752 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:26] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:27,085 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:27] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:27,497 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:27] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:29,557 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:29] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:29,935 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:29] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:30,035 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:30] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:30,435 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:30] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:31,492 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:31] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:31,883 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:31] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:32,067 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:32] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:32,523 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:32] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:33,428 - config_manager - INFO - 开始生成视频帧，质量: 75, FPS: 15
+2025-07-08 08:29:33,444 - werkzeug - INFO - 192.168.5.41 - - [08/Jul/2025 08:29:33] "GET /video_feed HTTP/1.1" 200 -
+2025-07-08 08:29:33,518 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:33] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:35,537 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:35] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:36,019 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:36] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:36,363 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:36] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:36,791 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:36] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:37,199 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:37] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:37,395 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:37] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:37,515 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:37] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:38,019 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:38] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:38,131 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:38] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:38,443 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:38] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:39,522 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:39] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:39,656 - config_manager - INFO - 已生成 1200 帧
+2025-07-08 08:29:39,855 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:39] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:40,039 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:40] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:40,480 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:40] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:41,291 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:41] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:41,513 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:41] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:43,539 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:43] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:44,883 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:44] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:45,075 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:45] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:45,505 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:45] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:45,599 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:45] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:45,699 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:45] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:46,299 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:46] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:46,347 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:46] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:46,831 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:46] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:47,547 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:47] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:49,501 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:49] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:51,510 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:51] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:53,496 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:53] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:53,595 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:53] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:53,995 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:53] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:54,111 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:54] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:54,511 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:54] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:54,651 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:54] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:54,967 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:54] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:55,219 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:55] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:55,451 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:55] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:55,526 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:55] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:55,587 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:55] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:55,815 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:55] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:55,929 - config_manager - INFO - 已生成 300 帧
+2025-07-08 08:29:55,975 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:55] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:56,435 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:56] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:56,543 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:56] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:56,947 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:56] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:57,567 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:57] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:57,662 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:57] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:57,891 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:57] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:58,287 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:58] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:58,911 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:58] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:59,063 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:59] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:59,532 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:59] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:29:59,607 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:29:59] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:29:59,681 - config_manager - INFO - 已生成 1500 帧
+2025-07-08 08:30:00,855 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:00] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:01,107 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:01] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:01,463 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:01] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:01,559 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:01] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:01,975 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:01] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:02,119 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:02] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:02,635 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:02] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:03,515 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:03] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:04,999 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:04] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:05,399 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:05] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:05,503 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:05] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:06,083 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:06] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:06,587 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:06] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:07,175 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:07] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:07,455 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:07] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:07,505 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:07] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:07,807 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:07] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:08,251 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:08] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:09,027 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:09] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:09,584 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:09] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:10,075 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:10] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:11,526 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:11] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:12,919 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:12] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:13,139 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:13] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:13,521 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:13] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:13,699 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:13] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:15,497 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:15] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:16,147 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:16] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:16,359 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:16] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:16,735 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:16] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:16,967 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:16] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:17,231 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:17] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:17,347 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:17] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:17,545 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:17] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:17,735 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:17] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:17,847 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:17] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:18,171 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:18] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:18,303 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:18] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:18,927 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:18] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:19,163 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:19] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:19,496 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:19] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:19,703 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:19] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:20,046 - config_manager - INFO - 已生成 1800 帧
+2025-07-08 08:30:20,403 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:20] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:20,711 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:20] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:20,968 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:20] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:21,475 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:21] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:21,504 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:21] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:21,643 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:21] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:22,255 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:22] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:22,379 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:22] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:23,167 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:23] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:23,327 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:23] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:23,492 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:23] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:24,303 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:24] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:25,141 - config_manager - INFO - 已生成 600 帧
+2025-07-08 08:30:25,518 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:25] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:27,499 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:27] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:27,799 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:27] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:27,863 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:27] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:28,375 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:28] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:28,799 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:28] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:29,107 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:29] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:29,526 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:29] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:29,674 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:29] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:29,807 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:29] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:30,483 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:30] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:31,251 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:31] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:31,499 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:31] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:31,508 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:31] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:31,935 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:31] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:32,099 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:32] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:32,791 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:32] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:33,515 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:33] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:34,823 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:34] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:35,503 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:35] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:35,803 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:35] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:35,971 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:35] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:37,207 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:37] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:37,307 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:37] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:37,505 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:37] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:37,843 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:37] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:38,723 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:38] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:39,203 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:39] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:39,501 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:39] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:39,667 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:39] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:40,254 - config_manager - INFO - 已生成 2100 帧
+2025-07-08 08:30:40,375 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:40] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:40,563 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:40] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:41,351 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:41] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:41,492 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:41] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:41,507 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:41] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:43,187 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:43] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:43,371 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:43] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:43,527 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:43] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:45,501 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:45] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:47,525 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:47] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:49,510 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:49] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:50,903 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:50] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:50,927 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:50] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:51,455 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:51] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:51,516 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:51] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:51,639 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:51] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:52,295 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:52] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:52,523 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:52] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:52,803 - config_manager - INFO - 已生成 900 帧
+2025-07-08 08:30:52,895 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:52] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:53,087 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:53] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:53,492 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:53] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:53,539 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:53] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:53,691 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:53] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:55,559 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:55] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:56,135 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:56] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:56,247 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:56] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:56,755 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:56] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:56,879 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:56] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:57,431 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:57] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:57,522 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:57] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:57,691 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:57] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:58,615 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:58] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:58,712 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:58] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:59,505 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:59] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:30:59,659 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:59] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:30:59,835 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:30:59] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:00,293 - config_manager - INFO - 已生成 2400 帧
+2025-07-08 08:31:01,495 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:01] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:02,319 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:02] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:02,655 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:02] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:03,498 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:03] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:04,131 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:04] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:05,502 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:05] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:07,503 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:07] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:09,603 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:09] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:10,167 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:10] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:10,815 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:10] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:11,099 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:11] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:11,555 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:11] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:11,580 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:11] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:11,739 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:11] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:12,410 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:12] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:13,526 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:13] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:13,591 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:13] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:13,971 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:13] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:14,263 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:14] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:14,915 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:14] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:15,091 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:15] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:15,503 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:15] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:17,527 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:17] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:19,516 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:19] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:20,372 - config_manager - INFO - 已生成 2700 帧
+2025-07-08 08:31:21,331 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:21] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:21,519 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:21] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:21,530 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:21] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:21,843 - config_manager - INFO - 已生成 1200 帧
+2025-07-08 08:31:22,771 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:22] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:23,107 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:23] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:23,497 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:23] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:23,643 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:23] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:23,883 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:23] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:24,620 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:24] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:24,707 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:24] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:25,271 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:25] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:25,539 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:25] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:25,727 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:25] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:26,063 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:26] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:26,271 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:26] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:26,887 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:26] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:27,572 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:27] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:27,675 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:27] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:28,183 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:28] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:28,319 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:28] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:28,759 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:28] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:28,871 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:28] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:29,523 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:29] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:29,557 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:29] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:29,623 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:29] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:30,363 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:30] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:30,555 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:30] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:30,951 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:30] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:31,457 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:31] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:31,516 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:31] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:31,587 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:31] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:31,963 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:31] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:32,075 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:32] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:32,851 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:32] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:33,199 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:33] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:33,506 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:33] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:33,603 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:33] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:33,707 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:33] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:34,271 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:34] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:34,439 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:34] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:35,489 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:35] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:35,567 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:35] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:35,835 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:35] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:36,207 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:36] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:36,435 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:36] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:37,195 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:37] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:37,343 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:37] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:37,496 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:37] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:37,855 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:37] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:38,083 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:38] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:38,687 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:38] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:38,875 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:38] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:39,503 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:39] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:39,979 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:39] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:40,127 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:40] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:40,907 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:40] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:41,500 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:41] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:42,663 - config_manager - INFO - 已生成 3000 帧
+2025-07-08 08:31:43,501 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:43] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:43,959 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:43] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:44,687 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:44] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:44,919 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:44] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:45,307 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:45] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:45,423 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:45] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:45,507 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:45] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:46,051 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:46] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:46,151 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:46] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:46,735 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:46] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:46,831 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:46] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:47,423 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:47] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:47,490 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:47] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:47,499 - config_manager - INFO - 已生成 1500 帧
+2025-07-08 08:31:47,563 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:47] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:48,167 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:48] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:48,403 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:48] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:48,691 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:48] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:48,831 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:48] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:49,327 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:49] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:49,493 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:49] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:49,499 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:49] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:51,727 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:51] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:53,497 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:53] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:55,539 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:55] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:56,579 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:56] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:56,711 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:56] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:57,179 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:57] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:57,403 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:57] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:57,496 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:57] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:31:58,003 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:58] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:58,187 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:58] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:58,807 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:58] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:31:59,515 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:31:59] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:01,624 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:01] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:01,787 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:01] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:02,693 - config_manager - INFO - 已生成 3300 帧
+2025-07-08 08:32:03,501 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:03] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:05,498 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:05] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:07,496 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:07] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:09,313 - config_manager - INFO - 已生成 1800 帧
+2025-07-08 08:32:09,497 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:09] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:11,492 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:11] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:13,518 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:13] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:15,503 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:15] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:17,351 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:17] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:17,493 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:17] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:18,827 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:18] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:18,967 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:18] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:19,520 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:19] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:19,599 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:19] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:19,751 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:19] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:20,718 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:20] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:21,620 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:21] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:21,755 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:21] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:21,871 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:21] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:22,287 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:22] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:22,483 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:22] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:22,787 - config_manager - INFO - 已生成 3600 帧
+2025-07-08 08:32:23,075 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:23] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:23,211 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:23] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:23,505 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:23] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:23,691 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:23] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:24,619 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:24] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:24,911 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:24] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:25,721 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:25] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:26,351 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:26] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:26,459 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:26] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:27,499 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:27] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:29,507 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:29] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:32,500 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:32] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:33,554 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:33] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:35,501 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:35] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:37,507 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:37] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:39,544 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:39] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:40,173 - config_manager - INFO - 已生成 2100 帧
+2025-07-08 08:32:41,498 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:41] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:42,809 - config_manager - INFO - 已生成 3900 帧
+2025-07-08 08:32:43,493 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:43] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:45,546 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:45] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:47,496 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:47] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:48,071 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:48] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:48,144 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:48] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:48,779 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:48] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:48,935 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:48] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:49,496 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:49] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:49,747 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:49] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:49,859 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:49] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:50,735 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:50] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:50,947 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:50] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:51,339 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:51] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:51,486 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:51] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:51,731 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:51] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:52,387 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:52] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:52,559 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:52] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:53,007 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:53] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:53,183 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:53] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:53,496 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:53] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:53,731 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:53] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:53,931 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:53] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:54,311 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:54] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:54,495 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:54] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:54,883 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:54] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:55,135 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:55] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:55,521 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:55] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:55,539 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:55] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:55,731 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:55] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:56,791 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:56] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:56,967 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:56] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:57,504 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:57] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:32:57,507 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:57] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:57,643 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:57] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:58,099 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:58] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:58,243 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:58] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:59,079 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:59] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:59,463 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:59] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:32:59,522 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:32:59] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:01,512 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:01] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:02,840 - config_manager - INFO - 已生成 4200 帧
+2025-07-08 08:33:03,505 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:03] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:05,514 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:05] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:07,525 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:07] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:09,505 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:09] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:11,516 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:11] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:13,499 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:13] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:15,685 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:15] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:17,496 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:17] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:19,486 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:19] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:21,481 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:21] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:22,880 - config_manager - INFO - 已生成 4500 帧
+2025-07-08 08:33:23,484 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:23] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:25,537 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:25] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:27,480 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:27] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:27,833 - config_manager - INFO - 开始生成视频帧，质量: 75, FPS: 15
+2025-07-08 08:33:27,842 - werkzeug - INFO - 192.168.5.41 - - [08/Jul/2025 08:33:27] "GET /video_feed HTTP/1.1" 200 -
+2025-07-08 08:33:29,509 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:29] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:31,493 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:31] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:33,509 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:33] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:35,491 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:35] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:36,563 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:36] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:36,634 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:36] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:37,497 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:37] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:39,183 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:39] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:39,315 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:39] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:39,500 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:39] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:40,383 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:40] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:40,511 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:40] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:41,291 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:41] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:41,407 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:41] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:41,502 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:41] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:42,255 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:42] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:43,535 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:43] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:45,517 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:45] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:46,483 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:46] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:47,490 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:47] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:47,579 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:47] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:47,763 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:47] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:48,255 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:48] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:48,371 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:48] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:48,410 - config_manager - INFO - 已生成 4800 帧
+2025-07-08 08:33:48,907 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:48] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:49,075 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:49] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:49,459 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:49] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:49,500 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:49] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:49,643 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:49] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:50,139 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:50] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:50,319 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:50] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:50,931 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:50] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:51,063 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:51] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:51,495 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:51] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:51,799 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:51] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:53,494 - config_manager - INFO - 已生成 300 帧
+2025-07-08 08:33:53,604 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:53] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:53,790 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:53] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:53,903 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:53] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:54,407 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:54] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:54,531 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:54] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:55,039 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:55] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:55,490 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:55] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:57,506 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:57] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:58,411 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:58] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:58,963 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:58] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:59,243 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:59] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:59,524 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:59] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:33:59,635 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:59] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:33:59,871 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:33:59] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:00,167 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:00] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:00,607 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:00] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:01,215 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:01] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:01,481 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:01] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:02,743 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:02] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:02,903 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:02] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:03,415 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:03] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:03,502 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:03] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:03,543 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:03] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:04,034 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:04] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:05,203 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:05] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:05,319 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:05] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:05,494 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:05] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:05,895 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:05] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:06,039 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:06] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:06,551 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:06] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:07,583 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:07] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:08,449 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:08] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:08,524 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:08] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:08,629 - config_manager - INFO - 已生成 5100 帧
+2025-07-08 08:34:10,806 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:10] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:10,902 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:34:10,904 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:10] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:34:12,339 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:12] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:13,954 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:13] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:15,744 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:15] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:16,745 - config_manager - INFO - 已生成 600 帧
+2025-07-08 08:34:18,339 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:18] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:21,974 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:21] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:23,222 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:23] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:26,456 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:26] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:30,155 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:30] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:31,651 - config_manager - INFO - 已生成 5400 帧
+2025-07-08 08:34:32,557 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:32] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:33,719 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:33] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:35,463 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:35] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:36,490 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:36] "GET / HTTP/1.1" 200 -
+2025-07-08 08:34:36,490 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:34:36,495 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:36] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:34:36,526 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:36] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:37,147 - config_manager - INFO - 开始生成视频帧，质量: 75, FPS: 15
+2025-07-08 08:34:37,163 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:37] "GET /video_feed HTTP/1.1" 200 -
+2025-07-08 08:34:37,264 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:37] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:39,411 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:39] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:40,940 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:40] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:41,019 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:41] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:41,943 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:41] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:42,867 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:42] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:43,167 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:43] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:43,303 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:43] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:43,827 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:43] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:45,099 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:45] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:45,404 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:45] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:46,439 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:46] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:46,448 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:46] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:48,192 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:48] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:49,920 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:49] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:51,765 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:51] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:53,609 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:53] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:55,055 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:55] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:55,651 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:55] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:34:57,231 - config_manager - INFO - 已生成 300 帧
+2025-07-08 08:34:57,643 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:57] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:57,651 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:57] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:34:58,764 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:34:58] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:00,311 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:00] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:02,805 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:02] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:04,146 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:04] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:05,572 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:05] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:08,060 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:08] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:08,987 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:08] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:35:09,359 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:09] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:10,095 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:10] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:35:10,395 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:10] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:35:11,533 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:11] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:11,667 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:11] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:35:12,135 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:12] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:35:13,564 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:13] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:15,294 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:15] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:15,707 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:15] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:35:16,563 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:16] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:35:17,256 - config_manager - INFO - 已生成 600 帧
+2025-07-08 08:35:17,300 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:17] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:17,399 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:17] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:35:21,699 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:21] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:23,294 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:35:23,296 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:23] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:35:23,806 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:35:23,808 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:23] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:35:23,814 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:35:23,815 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:23] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:35:23,822 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:35:23,823 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:23] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:35:25,782 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:35:25,783 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:25] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:35:28,446 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:28] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:28,538 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:35:28,540 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:28] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:35:28,552 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:35:28,555 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:28] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:35:28,558 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:35:28,560 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:28] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:35:29,442 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:35:29,444 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:29] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:35:30,914 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:35:30,916 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:30] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:35:31,200 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:31] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:34,091 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:34] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:35,419 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:35] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:35:35,773 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:35] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:36,528 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:36] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:37,040 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:37] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:35:37,047 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:37] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:35:38,192 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:38] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:40,010 - config_manager - INFO - 收到信号 2，正在退出...
+2025-07-08 08:35:40,011 - config_manager - INFO - 正在清理资源...
+2025-07-08 08:35:40,118 - serial_handler - INFO - 串口已断开
+2025-07-08 08:35:40,119 - config_manager - INFO - 串口已关闭
+2025-07-08 08:35:40,636 - picamera2.picamera2 - INFO - Camera stopped
+2025-07-08 08:35:41,040 - picamera2.picamera2 - INFO - Camera closed successfully.
+2025-07-08 08:35:41,040 - config_manager - INFO - 摄像头已停止
+2025-07-08 08:35:41,041 - config_manager - INFO - 正在清理资源...
+2025-07-08 08:35:41,542 - config_manager - INFO - 摄像头已停止
+2025-07-08 08:35:45,348 - config_manager - INFO - === 小车远程控制系统 v2.0 ===
+2025-07-08 08:35:45,348 - config_manager - INFO - 正在初始化系统...
+2025-07-08 08:35:45,349 - serial_handler - INFO - 串口连接成功: /dev/ttyS0
+2025-07-08 08:35:45,349 - config_manager - INFO - 串口初始化成功: /dev/ttyS0 @ 9600
+2025-07-08 08:35:45,382 - picamera2.picamera2 - INFO - Initialization successful.
+2025-07-08 08:35:45,382 - picamera2.picamera2 - INFO - Camera now open.
+2025-07-08 08:35:45,390 - picamera2.picamera2 - INFO - Configuration successful!
+2025-07-08 08:35:45,487 - picamera2.picamera2 - INFO - Camera started
+2025-07-08 08:35:45,488 - config_manager - INFO - 摄像头初始化成功: 640x480
+2025-07-08 08:35:46,489 - config_manager - INFO - 系统初始化完成
+2025-07-08 08:35:46,490 - config_manager - INFO - 网页控制界面: http://localhost:5800
+2025-07-08 08:35:46,490 - config_manager - INFO - 按 Ctrl+C 退出
+2025-07-08 08:35:46,503 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5800
+ * Running on http://192.168.5.170:5800
+2025-07-08 08:35:46,503 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-08 08:35:51,662 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:51] "GET / HTTP/1.1" 200 -
+2025-07-08 08:35:52,012 - config_manager - INFO - 开始生成视频帧，质量: 75, FPS: 15
+2025-07-08 08:35:52,025 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:52] "GET /video_feed HTTP/1.1" 200 -
+2025-07-08 08:35:52,326 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:52] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:52,609 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-08 08:35:54,565 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:54] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:57,034 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:57] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:58,223 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:58] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:35:58,319 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:58] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:35:59,459 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:35:59] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:00,285 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:00] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:00,679 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:00] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:02,199 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:02] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:02,960 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:02] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:03,138 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:36:03,140 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:03] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:36:04,235 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:04] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:05,027 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:05] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:06,192 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:06] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:07,767 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:07] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:08,259 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:08] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:08,774 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:36:08,775 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:08] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:36:10,752 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:10] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:12,356 - config_manager - INFO - 已生成 300 帧
+2025-07-08 08:36:12,603 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:12] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:13,282 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:13] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:14,591 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:14] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:14,689 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:14] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:15,779 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:15] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:15,923 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:15] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:16,620 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:16] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:17,383 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:17] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:17,827 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:17] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:18,608 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:18] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:19,551 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:19] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:19,647 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:19] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:20,890 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:20] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:20,987 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:20] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:20,995 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:20] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:22,123 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:22] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:22,199 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:22] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:22,579 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:22] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:24,054 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:36:24,056 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:24] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:36:24,962 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:24] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:25,027 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:25] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:28,095 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:28] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:28,519 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:28] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:29,373 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:29] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:30,809 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:30] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:32,388 - config_manager - INFO - 已生成 600 帧
+2025-07-08 08:36:32,910 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:32] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:34,083 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:34] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:34,783 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:34] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:34,923 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:34] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:34,951 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:34] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:35,095 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:35] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:35,215 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:35] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:36,003 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:36] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:36,562 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:36] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:37,044 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:37] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:38,491 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:38] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:40,275 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:40] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:42,164 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:42] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:44,204 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:44] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:46,561 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:46] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:47,472 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:47] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:48,436 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:48] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:49,215 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:49] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:50,031 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:50] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:50,439 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:50] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:50,467 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:50] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:51,719 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:51] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:51,875 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:51] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:52,226 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:52] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:52,425 - config_manager - INFO - 已生成 900 帧
+2025-07-08 08:36:52,643 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:52] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:53,439 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:53] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:36:54,149 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:54] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:57,086 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:36:57,087 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:57] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:36:57,182 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:57] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:58,739 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:58] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:36:59,378 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:36:59,380 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:36:59] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:37:00,466 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:00] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:00,507 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:00] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:01,926 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:37:01,928 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:01] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:37:04,378 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:04] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:05,199 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:05] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:05,725 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:05] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:08,159 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:08] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:08,434 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:08] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:08,594 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:37:08,596 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:08] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:37:09,111 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:09] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:10,425 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:10] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:12,095 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:12] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:12,458 - config_manager - INFO - 已生成 1200 帧
+2025-07-08 08:37:12,583 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:12] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:12,807 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:12] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:13,095 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:13] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:14,240 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:14] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:14,647 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:14] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:16,586 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:37:16,588 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:16] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:37:18,301 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:18] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:20,997 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:20] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:24,664 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:24] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:24,775 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:24] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:25,546 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:25] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:25,919 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:25] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:26,019 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:26] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:26,251 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:26] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:27,023 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:27] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:27,251 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:27] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:28,271 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:28] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:28,344 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:28] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:29,064 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:29] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:29,279 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:29] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:29,873 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:29] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:30,401 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:30] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:30,730 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:37:30,732 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:30] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:37:32,491 - config_manager - INFO - 已生成 1500 帧
+2025-07-08 08:37:32,576 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:32] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:34,290 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:34] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:35,647 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:35] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:36,512 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:36] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:38,192 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:38] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:40,240 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:40] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:42,166 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:42] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:44,524 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:44] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:46,355 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:46] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:48,533 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:48] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:50,481 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:50] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:52,434 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:52] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:52,522 - config_manager - INFO - 已生成 1800 帧
+2025-07-08 08:37:54,238 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:54] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:55,363 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:55] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:55,563 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:55] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:56,067 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:56] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:56,175 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:56] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:56,256 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:56] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:57,083 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:57] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:57,529 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:57] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:37:58,210 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:58] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:37:58,319 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:37:58] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:00,289 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:00] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:00,607 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:00] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:01,459 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:01] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:01,968 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:01] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:02,227 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:02] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:02,322 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:02] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:02,675 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:02] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:03,396 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:03] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:04,155 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:04] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:04,503 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:04] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:06,148 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:06] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:07,955 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:07] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:07,975 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:07] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:09,016 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:09] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:09,611 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:09] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:10,059 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:10] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:10,251 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:10] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:12,148 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:12] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:12,379 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:12] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:12,551 - config_manager - INFO - 已生成 2100 帧
+2025-07-08 08:38:14,238 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:14] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:15,974 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:38:15,976 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:15] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:38:16,851 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:16] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:18,542 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:18] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:19,343 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:19] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:19,935 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:19] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:20,425 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:20] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:21,159 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:21] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:21,319 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:21] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:22,482 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:22] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:23,035 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:23] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:23,043 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:23] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:24,135 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:24] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:24,147 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:24] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:24,979 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:24] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:25,095 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:25] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:26,506 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:26] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:26,819 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:26] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:27,019 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:27] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:27,735 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:27] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:28,752 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:28] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:29,170 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:38:29,172 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:29] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:38:30,171 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:30] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:31,227 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:31] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:31,939 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:31] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:32,447 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:32] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:32,592 - config_manager - INFO - 已生成 2400 帧
+2025-07-08 08:38:32,650 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:38:32,653 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:32] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:38:34,071 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:34] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:34,164 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:34] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:34,183 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:34] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:34,935 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:34] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:35,626 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:38:35,627 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:35] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:38:36,741 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:36] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:38,585 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:38] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:39,196 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:39] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:41,161 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:41] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:41,280 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:41] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:42,667 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:42] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:42,668 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:38:42,676 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:42] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:38:44,004 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:44] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:44,322 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:44] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:44,967 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:44] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:46,136 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:46] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:46,498 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:38:46,501 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:46] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:38:47,819 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:47] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:48,155 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:48] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:48,214 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:48] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:48,339 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:48] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:49,167 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:49] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:38:50,257 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:50] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:52,605 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:52] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:52,630 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:38:52,633 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:52] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:38:52,635 - config_manager - INFO - 已生成 2700 帧
+2025-07-08 08:38:55,096 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:55] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:56,940 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:56] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:38:58,897 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:38:58] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:00,544 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:00] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:00,839 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:00] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:01,131 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:01] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:01,423 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:01] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:02,591 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:02] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:02,660 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:02] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:03,179 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:03] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:03,791 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:03] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:04,409 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:04] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:04,587 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:04] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:04,631 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:04] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:05,115 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:05] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:06,063 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:06] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:06,553 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:06] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:06,651 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:06] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:07,957 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:07] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:08,019 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:08] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:08,407 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:08] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:10,830 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:10] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:12,264 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:12] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:12,666 - config_manager - INFO - 已生成 3000 帧
+2025-07-08 08:39:13,938 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:39:13,941 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:13] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:39:15,184 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:15] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:16,899 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:16] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:18,571 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:18] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:18,668 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:18] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:19,259 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:19] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:19,543 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:19] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:20,413 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:20] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:21,091 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:21] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:21,839 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:21] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:22,448 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:22] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:22,766 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:39:22,768 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:22] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:39:24,550 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:24] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:25,199 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:25] "POST /control HTTP/1.1" 200 -
+2025-07-08 08:39:27,754 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:27] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:28,946 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:39:28,947 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:28] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:39:29,476 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:29] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:29,798 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:39:29,799 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:29] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:39:30,614 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:30] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:31,786 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:39:31,787 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:31] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:39:32,694 - config_manager - INFO - 已生成 3300 帧
+2025-07-08 08:39:33,281 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:33] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:35,322 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:35] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:37,061 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:37] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:39,050 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:39] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:40,930 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:40] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:42,982 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:42] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:45,347 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:45] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:46,941 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:46] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:49,121 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:49] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:51,131 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:51] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:52,723 - config_manager - INFO - 已生成 3600 帧
+2025-07-08 08:39:53,306 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:53] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:55,014 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:55] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:57,208 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:57] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:39:59,171 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:39:59] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:01,034 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:01] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:03,618 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:03] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:05,112 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:05] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:06,946 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:06] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:09,187 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:09] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:10,881 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:10] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:12,752 - config_manager - INFO - 已生成 3900 帧
+2025-07-08 08:40:13,840 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:13] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:15,058 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:15] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:17,238 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:17] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:19,693 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:19] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:21,464 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:21] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:23,081 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:23] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:25,503 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:25] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:27,302 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:27] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:29,279 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:29] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:31,413 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:31] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:32,533 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:32] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:32,778 - config_manager - INFO - 已生成 4200 帧
+2025-07-08 08:40:33,282 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:40:33,283 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:33] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:40:35,631 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:35] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:37,249 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:37] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:40,115 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:40] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:41,127 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:41] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:43,304 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:43] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:45,530 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:45] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:46,298 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:40:46,299 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:46] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:40:47,096 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:47] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:48,360 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:48] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:50,477 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:50] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:52,704 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:52] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:52,820 - config_manager - INFO - 已生成 4500 帧
+2025-07-08 08:40:54,341 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:54] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:56,391 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:56] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:40:58,953 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:40:58] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:41:00,442 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:41:00] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:41:03,671 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:41:03] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:41:05,396 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:41:05] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:41:06,836 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:41:06] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:41:08,602 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:41:08] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:41:10,772 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:41:10] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:41:12,346 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:41:12] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:41:12,851 - config_manager - INFO - 已生成 4800 帧
+2025-07-08 08:41:12,870 - config_manager - INFO - 紧急停止命令已发送
+2025-07-08 08:41:12,872 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:41:12] "POST /emergency_stop HTTP/1.1" 200 -
+2025-07-08 08:41:15,266 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:41:15] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:41:17,168 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:41:17] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:41:19,630 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:41:19] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:41:21,227 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:41:21] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:41:23,517 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:41:23] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:41:25,677 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:41:25] "GET /status HTTP/1.1" 200 -
+2025-07-08 08:41:26,907 - werkzeug - INFO - 192.168.5.68 - - [08/Jul/2025 08:41:26] "GET /status HTTP/1.1" 200 -
